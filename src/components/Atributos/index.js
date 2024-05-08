@@ -1,0 +1,1 @@
+export { default as Atributos } from "./Atributos/Atributos"
