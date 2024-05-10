@@ -9,11 +9,11 @@
         grid-column: 1;
         width: 100%;
         margin: 0;
-        padding: 1px;
+        padding: 3px;
         border: 1px solid var(--higlight-color);
         button {
             width: 100%;
-            height: 25px;
+            height: 30px;
             border: none;
         }
         input {

@@ -8,7 +8,7 @@ const ImagenOpcional = ({imagen, className, alt, baseUrl = "http://127.0.0.1:800
     )
   } else {
     return(
-      <img className={className} src="https://placehold.co/600x400/png" alt="placeholder" />
+      <img className={className} src="https://placehold.co/400x400/png" alt="placeholder" />
     )
   }
 }

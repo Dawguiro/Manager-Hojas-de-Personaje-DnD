@@ -1,0 +1,22 @@
+.roll{
+    margin: 0;
+    padding: 0;
+}
+
+.toast {
+    border-radius: 10px;
+    position: fixed;
+    bottom: 20px !important;
+    right: 10px !important;
+    background-color: #36353d;
+    width: max-content;
+    .toast-header {
+        background-color: #232328;
+        color: white;
+        padding: 5%;
+    }
+    .toast-body {
+        font-size: 16px;
+        padding: 20px;
+    }
+}
