@@ -5,11 +5,9 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import { PencilFill } from 'react-bootstrap-icons'
 import { Form, FormGroup } from 'react-bootstrap';
+import Modificador from '../modificador';
 
 const BaseInfo = ({personaje, setPersonaje}) => {
-  const masOMenos = (n) => {
-    return n >= 0 ? `+${n}`:n
-  }
   const [infoBase, setInfo] = useState(personaje)
   useEffect(() => {
     setInfo(personaje)
@@ -63,7 +61,7 @@ const BaseInfo = ({personaje, setPersonaje}) => {
           <TirarDados modificador={infoBase.iniciativa} nombre={'Iniciativa'}>
           <div className='container'>
             <div className='valor'>
-              {masOMenos(infoBase.iniciativa)}
+              {Modificador.masOMenos(infoBase.iniciativa)}
             </div>
             Iniciativa
           </div>

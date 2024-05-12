@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Atributos.css"
 import { FloppyFill, PencilFill, SaveFill } from 'react-bootstrap-icons'
 import TirarDados from '../TirarDados/TirarDados'
-
+import Modificador from '../modificador'
 
 
 const Atributos = ({atributos, setPersonaje}) => {
@@ -65,8 +65,7 @@ const Atributos = ({atributos, setPersonaje}) => {
 }
 
 const Stat = ({stat}) => {
-  const masOMenos = (n) => {return n >= 0 ? `+${n}`:n}
-  const modificador = Math.floor((stat.valor - 10) / 2)
+  const modificador = new Modificador(stat.valor).calcModificador()
   return(
     <TirarDados modificador={modificador} nombre={stat.nombre}>
     <div className='container w-100 bg-inherit text-light p-2 stat'>
@@ -74,7 +73,7 @@ const Stat = ({stat}) => {
       <div className='valor p-1 text-center'>
         {stat.valor}
         <div className='modificador p-2 text-center'>
-          {masOMenos(modificador)}
+          {Modificador.masOMenos(modificador)}
         </div>
       </div>
     </div>

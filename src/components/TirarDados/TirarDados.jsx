@@ -27,7 +27,7 @@ const TirarDados = (props) => {
         <Toast.Body>{
         Number(props.modificador) >= 0 
         ? `${resultado} (d${dado}) + ${props.modificador} = ${resultado+props.modificador}`
-        : `${resultado} (d${dado}) - ${props.modificador} = ${resultado+props.modificador}`
+        : `${resultado} (d${dado}) - ${props.modificador*-10} = ${resultado+props.modificador}`
         }</Toast.Body>
       </Toast>
     </ToastContainer>
