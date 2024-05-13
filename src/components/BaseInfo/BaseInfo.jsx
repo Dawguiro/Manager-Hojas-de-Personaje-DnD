@@ -12,6 +12,7 @@ const BaseInfo = ({personaje, setPersonaje}) => {
   useEffect(() => {
     setInfo(personaje)
   }, [personaje])
+
   const HandleChange = (e) => {
     const {name, value} = e.target
     setInfo(prev => ({
@@ -19,6 +20,7 @@ const BaseInfo = ({personaje, setPersonaje}) => {
       [name]: value
     }))
   }
+
   const Guardar = () => {
     setPersonaje(prev => ({
       ...prev,
@@ -68,7 +70,7 @@ const BaseInfo = ({personaje, setPersonaje}) => {
           </TirarDados>
         </div>
       <div className='hp-inspo'>
-        <Inspo/>
+        <Inspo texto={'Inspiración'}/>
         <HitPoints hp={infoBase.maxHp}/>
       </div>
     </div>

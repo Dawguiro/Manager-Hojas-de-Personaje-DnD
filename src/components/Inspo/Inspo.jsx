@@ -7,9 +7,9 @@ const Inspo = (props) => {
     insClass == "inspo" ? setClass("inspo active") : setClass("inspo")
   }
   return (
-    <span  onClick={InspoToggle}>
-      <button className={insClass}>
-        Inspiración
+       <span onClick={InspoToggle}>
+      <button className={insClass} style={props.style}>
+        {props.texto}
       </button>
     </span>
   )

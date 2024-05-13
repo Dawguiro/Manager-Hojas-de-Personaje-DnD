@@ -24,6 +24,7 @@ const Atributos = ({atributos, setPersonaje}) => {
   useEffect(() => {
     setStats(atributos)
   }, [atributos])
+
   const HandleChange = (e) => {
     const {name, value} = e.target
     console.log(name, value)
@@ -82,8 +83,7 @@ const Stat = ({stat}) => {
 }
 
 const StatEdit = ({stat, HandleChange}) => {
-  const masOMenos = (n) => {return n >= 0 ? `+${n}`:n}
-  const modificador = Math.floor((stat.valor - 10) / 2)
+  const modificador = new Modificador(stat.valor).calcModificador()
   const nombre = stat.nombre.slice(0, 3)
   return(
     <div className='stat'>
@@ -91,7 +91,7 @@ const StatEdit = ({stat, HandleChange}) => {
       <div className='valor'>
         <input type="number" min={0} max={20} name={nombre} value={stat.valor} onChange={HandleChange}/>
         <div className='modificador'>
-          {masOMenos(modificador)}
+          {Modificador.masOMenos(modificador)}
         </div>
       </div>
     </div>

@@ -12,7 +12,6 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('personaje') != undefined) {
       setPersonaje(JSON.parse(localStorage.getItem("personaje")))
-      console.log("yes")
     }
     }, []);
 
@@ -32,7 +31,7 @@ function App() {
       <Atributos atributos={personaje.atributos} setPersonaje={setPersonaje}/>
     </section>
     <section>
-      <Habilidades personaje={personaje}/>
+      <Habilidades personaje={personaje} setPersonaje={setPersonaje}/>
     </section>
     </>
   )
