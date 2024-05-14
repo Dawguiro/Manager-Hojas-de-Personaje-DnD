@@ -86,7 +86,7 @@ const PersonajeDefault = {
       },
       "juego_de_manos": {
         "nombre": "Juego de Manos",
-        "atributo": "Int",
+        "atributo": "Des",
         "competencia": 0,
         "modificador": 0
       },
@@ -126,7 +126,7 @@ const PersonajeDefault = {
         "competencia": 0,
         "modificador": 0
       },
-      "animal_hand": {
+      "trato_animales": {
         "nombre": "Trato con Animales",
         "atributo": "Sab",
         "competencia": 0,

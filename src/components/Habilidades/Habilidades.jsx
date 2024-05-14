@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import "./Habilidades.css"
 import Modificador from '../modificador'
 import Inspo from '../Inspo/Inspo'
+import TirarDados from '../TirarDados/TirarDados'
 
 const Habilidades = ({personaje, setPersonaje}) => {
   const prof = Math.floor(personaje.infoBase.nivel / 4) + 2
@@ -28,38 +29,35 @@ const Habilidades = ({personaje, setPersonaje}) => {
   return (
     <div className='Habilidades'>
       <div className='skills-header'>
-        Habilidades
+        <h2>Habilidades</h2>
         <div>
-          Bono de Competencia
-          <span>+{prof}</span>
+          <p>
+            Bono de Competencia 
+            <span> +{prof}</span>
+          </p>
         </div>
       </div>
       <div className="skills-body">
         {
           Object.keys(habilidades).map((key) => (
-          <Skill 
-            key={key}
-            prof={prof}
-            habilidad={habilidades[key]}
-            atributos={personaje.atributos}
-            setHabilidades={setHabilidades} 
-           />
+          <TirarDados nombre={habilidades[key].nombre} modificador={habilidades[key].modificador}>
+            <Skill 
+              key={key}
+              clave={key}
+              prof={prof}
+              habilidad={habilidades[key]}
+              atributos={personaje.atributos}
+              setHabilidades={setHabilidades} 
+            />
+          </TirarDados>
           ))
         }
-        <Skill 
-        key={"acrobacias"}
-        prof={prof}
-        habilidad={habilidades.acrobacias}
-        atributos={personaje.atributos}
-        setHabilidades={setHabilidades} 
-        />
       </div> 
     </div>
   )
 }
 
-const Skill = ({key, prof, habilidad, atributos, setHabilidades}) => {
-  console.log(habilidad)
+const Skill = ({clave, prof, habilidad, atributos, setHabilidades}) => {
   const valor = atributos[habilidad.atributo].valor
   const [mod, setMod] = useState(new Modificador(valor).calcModificador())
   const [comp, setComp] = useState(habilidad.competencia)
@@ -69,7 +67,7 @@ const Skill = ({key, prof, habilidad, atributos, setHabilidades}) => {
     habilidad.competencia = 1 :
     habilidad.competencia = 0
     setComp(habilidad.competencia)
-    setHabilidades(prev => ({...prev, [key]: habilidad}))
+    setHabilidades(prev => ({...prev, [clave]: habilidad}))
   }
   useEffect(() => {
     const checkbox = document.getElementById(habilidad.nombre)
@@ -80,14 +78,16 @@ const Skill = ({key, prof, habilidad, atributos, setHabilidades}) => {
       checkbox.checked = true
       habilidad.modificador = new Modificador(valor).calcModificador() + prof
     }
-    setHabilidades(prev => ({...prev, [key]: habilidad}))
+    setHabilidades(prev => ({...prev, [clave]: habilidad}))
     setMod(habilidad.modificador)
   }, [comp, atributos])
   return (
-    <div>
+    <div key={clave}>
       <input type="checkbox" onClick={ToggleProf} id={habilidad.nombre} />
-      {habilidad.nombre}
-      <span className='modificador'> {Modificador.masOMenos(mod)}</span>
+      <p>
+        {habilidad.nombre}
+      </p>
+        <span className='modificador'> {Modificador.masOMenos(mod)}</span>
     </div>
   )
 }
