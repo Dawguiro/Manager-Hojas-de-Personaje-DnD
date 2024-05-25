@@ -2,26 +2,30 @@
     position: relative;
     height: fit-content;
     text-align: center;
-    margin: 20svh 0 0 0;
-    padding: 0;
+    margin-top: 30px;
+    padding: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
-    
+    border: none;
+    h3 {
+        text-align: center;
+    }
     .bi {
         position: absolute;
         top: 0px;
-        right: 0px;
+        right: 15px;
+        border: none
     }
     .stat {
         font-weight: 800;
         font-size: 20px;
+        max-width: 120px;
         padding: 5px 15px;
-        margin: 10px 0;
+        margin: 10px auto;
         .valor {
             position: relative;
             border: 1px solid var(--higlight-color);
-            width: 80px;
             height: 60px;
             font-weight: 10;
             letter-spacing: 4px;

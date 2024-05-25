@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import "./HitPoints.css"
 
-const HitPoints = (props) => {
+const HitPoints = ({maxHp, setInfo}) => {
   const [input, setInput] = useState(0)
-  const [hp, setHp] = useState(Number(props.hp))
-
+  const [hp, setHp] = useState(maxHp)
   const handleChange = (e) => {
     setInput(e.target.value)
   }
@@ -12,11 +11,21 @@ const HitPoints = (props) => {
   const updateHp = (e) => {
     var btn = e.target
     if (btn.id == "cura"){
-      setHp(Number(hp) + Number(input))
+      let vidaNueva = Number(hp) + Number(input)
+      if (vidaNueva <= maxHp){
+        setHp(vidaNueva)
+      } else {
+        setHp(maxHp)
+      }
       setInput(0)
     }
     if (btn.id == "daño"){
-      setHp(Number(hp) - Number(input))
+      let vidaNueva = Number(hp) - Number(input)
+      if (vidaNueva > 0){
+        setHp(vidaNueva)
+      } else {
+        setHp(0)
+      }
       setInput(0)
     }
   }
@@ -29,7 +38,7 @@ const HitPoints = (props) => {
         <button id="daño" onClick={updateHp}>Daño</button>
       </div>
       <div className='hp'>
-        <p>{hp}</p>
+        <p>{hp}/{maxHp}</p>
       </div>
     </div>
   )

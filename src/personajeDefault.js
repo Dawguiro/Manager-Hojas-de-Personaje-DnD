@@ -1,8 +1,8 @@
 const PersonajeDefault = {
    "infoBase": {
-      "nombre": "Ganug Malimar",
-      "linaje": "Gnomo",
-      "clase": "Barbaro 1",
+      "nombre": "Nombre de Personaje",
+      "linaje": "Raza",
+      "clase": "Clase 1",
       "nivel": "1",
       "maxHp": 15,
       "ac": 10,

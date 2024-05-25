@@ -1,0 +1,1 @@
+export { default as Borrar } from "./Borrar/Borrar"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import "./Atributos.css"
 import { FloppyFill, PencilFill, SaveFill } from 'react-bootstrap-icons'
 import TirarDados from '../TirarDados/TirarDados'
@@ -66,11 +66,11 @@ const Atributos = ({atributos, setPersonaje}) => {
 }
 
 const Stat = ({stat}) => {
-  const modificador = new Modificador(stat.valor).calcModificador()
+  const modificador = useMemo(() => new Modificador(stat.valor).calcModificador(), [stat.valor])
   return(
     <TirarDados modificador={modificador} nombre={stat.nombre}>
-    <div className='container w-100 bg-inherit text-light p-2 stat'>
-      {stat.nombre.slice(0, 3)}
+    <div className='container col bg-inherit text-light p-2 stat'>
+      <h3>{stat.nombre.slice(0, 3)}</h3>
       <div className='valor p-1 text-center'>
         {stat.valor}
         <div className='modificador p-2 text-center'>

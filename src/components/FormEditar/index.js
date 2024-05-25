@@ -1,0 +1,1 @@
+export { default as FormEditar } from "./FormEditar/FormEditar"

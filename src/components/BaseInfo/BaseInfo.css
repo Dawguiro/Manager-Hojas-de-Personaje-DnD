@@ -1,11 +1,10 @@
 .BaseInfo {
-    position: fixed;
+    position: sticky;
     z-index: 1;
-    background-color: #100f11;
+    background-color: #000000b5;
     border-bottom: 1px solid var(--higlight-color);
-    display: grid;
-    width: 100%;
-    height: 23svh;
+    width: 100vw;
+    margin: 0 auto;
     padding-block: 0.5em;
     grid-template-columns: repeat(1fr, 6);
     grid-template-rows: 1fr 1fr;
@@ -15,17 +14,13 @@
     letter-spacing: 0.05rem;
     color: rgba(240, 255, 255, 0.856);
     .info {
-        grid-column: 1 / 3;
-        grid-row: 1 / 3;
-        width: 60vw;
-        display: flex;
-        margin: 0;
+        margin: 0 0 15px 0;
         padding: 0;
         .datos{
             padding: 0;
             margin: 0;
             width: 100%;
-            font-size: 0.8em;
+            font-size: 1.2em;
             line-height: 1.2;
             .nombre {
                 padding: 0em;
@@ -40,22 +35,15 @@
         }
     }
     .hp-inspo {
-        grid-column: 3 / 6;
-        grid-row: 1 / 4;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
     }
-    .retrato {
-        grid-column: 1;
-        width: auto;
-        height: 70px;
-        aspect-ratio: 1/1;
-        margin: 0 1%;
-    }
+
     .basic-combat {
         width: 100%;
         font-size: 15px;
         line-height: 1.3;
-        grid-column: 1 / 3;
-        grid-row: 3;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-content: space-around;
@@ -70,7 +58,7 @@
 }
 
 .offcanvas {
-    background-color: #1a1a1a !important;
+    background-color: #00000015 !important;
     color: rgb(242, 232, 255) !important;
     .btn-close {
         color: rgb(242, 232, 255) !important;
@@ -89,4 +77,17 @@
     .btn:hover {
         background-color: #533cbc !important;
     }
+}
+
+@media screen and (min-width: 600px) {
+    .BaseInfo{
+        display: flex;
+        padding: 1rem 20px;
+        justify-content: space-evenly;
+        .inspo {
+            margin: 10px;
+            height: 4rem;
+        }
+    } 
+
 }

@@ -40,7 +40,6 @@ const Habilidades = ({personaje, setPersonaje}) => {
       <div className="skills-body">
         {
           Object.keys(habilidades).map((key) => (
-          <TirarDados nombre={habilidades[key].nombre} modificador={habilidades[key].modificador}>
             <Skill 
               key={key}
               clave={key}
@@ -49,7 +48,6 @@ const Habilidades = ({personaje, setPersonaje}) => {
               atributos={personaje.atributos}
               setHabilidades={setHabilidades} 
             />
-          </TirarDados>
           ))
         }
       </div> 
@@ -84,10 +82,12 @@ const Skill = ({clave, prof, habilidad, atributos, setHabilidades}) => {
   return (
     <div key={clave}>
       <input type="checkbox" onClick={ToggleProf} id={habilidad.nombre} />
-      <p>
-        {habilidad.nombre}
-      </p>
-        <span className='modificador'> {Modificador.masOMenos(mod)}</span>
+      <TirarDados nombre={habilidad.nombre} modificador={habilidad.modificador}>
+        <p>
+          {habilidad.nombre}
+        </p>
+          <span className='modificador'> {Modificador.masOMenos(mod)}</span>
+      </TirarDados>
     </div>
   )
 }
