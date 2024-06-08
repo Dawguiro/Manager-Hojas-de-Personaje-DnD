@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import "./Atributos.css"
 import { FloppyFill, PencilFill, SaveFill } from 'react-bootstrap-icons'
 import TirarDados from '../TirarDados/TirarDados'
-import Modificador from '../modificador'
+import {calcModificador, masOMenos} from '../modificador'
 
 
 const Atributos = ({atributos, setPersonaje}) => {
@@ -66,7 +66,7 @@ const Atributos = ({atributos, setPersonaje}) => {
 }
 
 const Stat = ({stat}) => {
-  const modificador = useMemo(() => new Modificador(stat.valor).calcModificador(), [stat.valor])
+  const modificador = useMemo(() => calcModificador(stat.valor), [stat.valor])
   return(
     <TirarDados modificador={modificador} nombre={stat.nombre}>
     <div className='container col bg-inherit text-light p-2 stat'>
@@ -74,7 +74,7 @@ const Stat = ({stat}) => {
       <div className='valor p-1 text-center'>
         {stat.valor}
         <div className='modificador p-2 text-center'>
-          {Modificador.masOMenos(modificador)}
+          {masOMenos(modificador)}
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@ const Stat = ({stat}) => {
 }
 
 const StatEdit = ({stat, HandleChange}) => {
-  const modificador = new Modificador(stat.valor).calcModificador()
+  const modificador = calcModificador(stat.valor)
   const nombre = stat.nombre.slice(0, 3)
   return(
     <div className='stat'>
@@ -91,7 +91,7 @@ const StatEdit = ({stat, HandleChange}) => {
       <div className='valor'>
         <input type="number" min={0} max={20} name={nombre} value={stat.valor} onChange={HandleChange}/>
         <div className='modificador'>
-          {Modificador.masOMenos(modificador)}
+          {masOMenos(modificador)}
         </div>
       </div>
     </div>

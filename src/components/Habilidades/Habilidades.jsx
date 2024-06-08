@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./Habilidades.css"
-import Modificador from '../modificador'
+import {calcModificador, masOMenos} from '../modificador'
 import Inspo from '../Inspo/Inspo'
 import TirarDados from '../TirarDados/TirarDados'
 
@@ -57,7 +57,7 @@ const Habilidades = ({personaje, setPersonaje}) => {
 
 const Skill = ({clave, prof, habilidad, atributos, setHabilidades}) => {
   const valor = atributos[habilidad.atributo].valor
-  const [mod, setMod] = useState(new Modificador(valor).calcModificador())
+  const [mod, setMod] = useState(calcModificador(valor))
   const [comp, setComp] = useState(habilidad.competencia)
 
   const ToggleProf = () => {
@@ -71,10 +71,10 @@ const Skill = ({clave, prof, habilidad, atributos, setHabilidades}) => {
     const checkbox = document.getElementById(habilidad.nombre)
     if (habilidad.competencia == 0){
       checkbox.checked = false
-      habilidad.modificador = new Modificador(valor).calcModificador()
+      habilidad.modificador = calcModificador(valor)
     } else if (habilidad.competencia == 1){
       checkbox.checked = true
-      habilidad.modificador = new Modificador(valor).calcModificador() + prof
+      habilidad.modificador = calcModificador(valor) + prof
     }
     setHabilidades(prev => ({...prev, [clave]: habilidad}))
     setMod(habilidad.modificador)
@@ -86,7 +86,7 @@ const Skill = ({clave, prof, habilidad, atributos, setHabilidades}) => {
         <p>
           {habilidad.nombre}
         </p>
-          <span className='modificador'> {Modificador.masOMenos(mod)}</span>
+          <span className='modificador'> {masOMenos(mod)}</span>
       </TirarDados>
     </div>
   )

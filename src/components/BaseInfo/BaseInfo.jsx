@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import "./BaseInfo.css"
-import { HitPoints, FormEditar, Inspo, TirarDados } from '../index'
+import { HitPoints, FormEditar, Inspo, TirarDados } from '../barrel'
 import 'bootstrap/dist/css/bootstrap.css'; 
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import { PencilFill } from 'react-bootstrap-icons'
 import { Form, FormGroup } from 'react-bootstrap';
-import Modificador from '../modificador';
+import {masOMenos} from '../modificador.ts';
+
+
 
 const BaseInfo = ({personaje, setPersonaje}) => {
   const [infoBase, setInfo] = useState(personaje)
@@ -15,14 +17,14 @@ const BaseInfo = ({personaje, setPersonaje}) => {
 
   const HandleChange = (e) => {
     const {name, value} = e.target
-    setInfo(prev => ({
+    setInfo((prev) => ({
       ...prev,
       [name]: value
     }))
   }
 
   const Guardar = () => {
-    setPersonaje(prev => ({
+    setPersonaje((prev) => ({
       ...prev,
       infoBase: infoBase
     }))
@@ -64,7 +66,7 @@ const BaseInfo = ({personaje, setPersonaje}) => {
               <TirarDados modificador={infoBase.iniciativa} nombre={'Iniciativa'}>
               <div className='container'>
                 <div className='valor'>
-                  {Modificador.masOMenos(infoBase.iniciativa)}
+                  {masOMenos(infoBase.iniciativa)}
                 </div>
                 Iniciativa
               </div>

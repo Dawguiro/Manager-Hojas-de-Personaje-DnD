@@ -6,7 +6,6 @@ import { toast } from 'react-toastify'
 
 const Copiar = (props) => {
   const personaje = localStorage.getItem('personaje')
-  console.log(personaje)
   return (
     <CopyToClipboard text={personaje} onCopy={() => {toast.info('Personaje copiado al portapapeles')}}>
       <div key={'Copiar'} className={'menu-button Copiar ' + props.menuState} >

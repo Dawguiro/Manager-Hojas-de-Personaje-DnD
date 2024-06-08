@@ -7,7 +7,6 @@ const Menu = (props) => {
   const [menuState, setMenuState] = useState('disabled')
   return (
     <div className='Menu'>
-      {console.log(menuState)}
       <Main 
       menuState={menuState} 
       setMenuState={setMenuState}

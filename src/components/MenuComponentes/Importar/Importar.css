@@ -1,2 +1,27 @@
 .Importar {
 }
+
+.toast-importar {
+    .form-label{
+        font-size: 16px;
+        letter-spacing: -0.03rem;
+        font-weight: lighter;
+    }
+    .form-control::file-selector-button{
+        background-color: #4a4a4a;
+        color: rgb(228, 228, 214);
+    }
+    .form-control:hover::file-selector-button{
+        background-color: #383838 !important;
+    }
+    input{
+        background-color: hsl(0, 0%, 83%);
+        border-color: #1a1a1a;
+        font-size: 14px;
+        transition: 0.2s;
+    }
+    input:hover {
+        background-color: #b0b0b0;
+    }
+    
+}

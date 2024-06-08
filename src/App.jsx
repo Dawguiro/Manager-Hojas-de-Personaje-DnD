@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import PersonajeDefault from './personajeDefault'
-import { Atributos, BaseInfo, Habilidades, Menu } from './components/index'
+import { Atributos, BaseInfo, Habilidades, Inventario, Menu } from './components/barrel.js'
 import "react-toastify/dist/ReactToastify.css"
 import { ToastContainer } from 'react-toastify'
 
@@ -11,7 +9,7 @@ function App() {
 
   const [personaje, setPersonaje] = useState(PersonajeDefault)
   useEffect(() => {
-    if (localStorage.getItem('personaje') != undefined) {
+    if (localStorage.getItem('personaje') != undefined && localStorage.getItem('personaje') != "") {
       setPersonaje(JSON.parse(localStorage.getItem("personaje")))
     }
     }, []);
@@ -44,6 +42,8 @@ function App() {
     <section className='principal'>
       <Atributos atributos={personaje.atributos} setPersonaje={setPersonaje}/>
       <Habilidades personaje={personaje} setPersonaje={setPersonaje}/>
+      <Inventario personaje={personaje} />
+
     </section>
     <Menu setPersonaje={setPersonaje}/>
     </>

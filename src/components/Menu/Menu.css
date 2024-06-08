@@ -53,12 +53,12 @@
     }
 }
 
-.disabled {
+.menu-button.disabled {
     opacity: 0;
     transform: translate(5rem, 0);
     animation: Slide-out-menu 0.5s;
 }
-.active {
+.menu-button.active {
     animation: Slide-in-menu 0.5s;
 }
 
