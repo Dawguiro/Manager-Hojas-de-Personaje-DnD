@@ -1,5 +1,5 @@
 export function masOMenos (n: number) {
-        return n >= 0 ? `+${n}`: 'n'
+        return n >= 0 ? `+${n}`: n
     }
 
 export function calcModificador(valor: number) {
