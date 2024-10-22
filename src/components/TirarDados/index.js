@@ -1,0 +1,1 @@
+export { default as TirarDados } from "./TirarDados/TirarDados"

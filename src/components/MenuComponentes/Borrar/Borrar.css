@@ -1,0 +1,28 @@
+.Borrar {
+    background-color: rgb(246, 45, 45);
+}
+.Borrar:hover {
+    background-color: rgb(244, 81, 53);
+}
+
+.popup {
+    min-width: fit-content;
+    .botones-confirmar{
+        display: flex;
+        justify-content: space-evenly;
+        button {
+            border: 1px solid #a1a1a1;
+            flex: 0 1 40%;
+            margin-top: 0.5rem;
+            padding: 0.3rem 1.5rem;
+            min-width: fit-content;
+            border-radius: 1rem;
+        }
+        .confirmar {
+            background-color: rgb(236, 15, 59);
+        }
+        .confirmar:hover {
+            background-color:rgb(226, 74, 104);
+        }
+    }
+}

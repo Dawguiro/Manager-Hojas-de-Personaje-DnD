@@ -1,0 +1,14 @@
+.FormEditar {
+    background-color: #323232;
+    .form-label {
+        letter-spacing: -0.03rem;
+    }
+    .row {
+        margin: 0 0 0.6em 0;
+    }
+    .form-control {
+        margin: 0;
+        background-color: #ffffffda !important;
+        color: #262626;
+    }
+}

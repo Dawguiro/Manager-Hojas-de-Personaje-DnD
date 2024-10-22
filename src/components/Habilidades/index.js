@@ -1,0 +1,1 @@
+export { default as Habilidades } from "./Habilidades/Habilidades"

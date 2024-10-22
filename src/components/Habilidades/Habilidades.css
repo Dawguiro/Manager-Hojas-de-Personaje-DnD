@@ -1,0 +1,65 @@
+.Habilidades {
+    margin: 3rem 0;
+    border: 1px solid #654fc6;
+    border-radius: 15px;
+    background-color: #000000b5;
+    margin: 0 auto;
+    max-width: 450px;
+    padding: 20px;
+    letter-spacing: 0.1rem;
+    font-size: 1.3rem;
+    color: rgba(240, 255, 255, 0.856);
+}
+
+.skills-header {
+    margin: 0 0 20px 0;
+    padding: 10px 0px;
+    h2 {
+        padding: 0;
+        margin: 0;
+        font-size: 26px;
+        letter-spacing: -0.08rem;
+    }
+    p {
+        padding: 0;
+        margin: 0;
+        span {
+            color: rgb(181, 164, 255);
+            font-weight: 700;
+        }
+    }
+}
+
+.skills-body{
+    max-height: 600px;
+    overflow-y: scroll;
+    padding: 0.5em;
+    div .roll {
+        display: flex;
+        flex: 1 1;
+        border: none;
+    }
+
+    div{
+        display: flex;
+        justify-content: space-between;
+        text-align: start;
+        padding: 1.2rem 15px;
+        border-top: 1px solid #696969;
+        input {
+            margin: 0 5px 0 0;
+            padding: 1rem;
+            width: 1.5rem;
+        }
+        p {
+            width: 100%;
+            align-self: flex-start;
+            margin: 0;
+        }
+        span{
+            border: 1px #696969 solid;
+            padding: 0 5px;
+        }
+    }
+
+}

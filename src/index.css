@@ -5,8 +5,9 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  --higlight-color: #654fc6;
+  --azul-comp: #8C50C7;
+  background-color: #404740 !important;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,10 +25,13 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: #242424 !important;
+  color: rgba(255, 255, 255, 0.87) !important;
 }
 
 h1 {

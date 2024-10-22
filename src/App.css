@@ -1,43 +1,38 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
+}
+
+body {
   --higlight-color: #654fc6;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@media screen and (min-width: 920px) {
+  .principal {
+    display: flex;
+    flex: 0 1 100%;
+    margin: auto;
+    padding: 5em;
   }
-  to {
-    transform: rotate(360deg);
+  .Habilidades {
+    flex: 1;
+    max-width: max-content !important;
+    .skills-body{
+      max-height: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      p{
+        min-width: max-content;
+        margin: 0 15px 0 0;
+      }
+    }
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .Atributos {
+    flex: 1;
+    max-width: 700px;
+    min-width: 375px;
   }
-}
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }

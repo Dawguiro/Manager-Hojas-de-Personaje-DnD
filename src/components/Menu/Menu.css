@@ -1,0 +1,88 @@
+.Menu {
+    position: fixed;
+    z-index: 2;
+    display: flex;
+    flex-direction: column-reverse;
+    bottom: 10px;
+    right: 5px;
+    .bi {
+        margin: auto;
+        padding: 4px;
+        width: 1em;
+        height: 1em;
+        font-size: 45px;
+    }
+}
+
+.menu-button {
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 10px 0;
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    background-color: var(--higlight-color);
+    transition: 200ms;
+    .bi {
+        margin: 0;
+        padding: 3px 0 0 0;
+        font-size: 2rem;
+    }
+}
+.menu-button:hover {
+    background-color: #8C50C7;
+}
+.popup {
+    min-width: fit-content;
+    .botones-confirmar{
+        display: flex;
+        justify-content: space-evenly;
+        button {
+            border: 1px solid #a1a1a1;
+            flex: 0 1 40%;
+            margin-top: 0.5rem;
+            padding: 0.3rem 1.5rem;
+            min-width: fit-content;
+            border-radius: 1rem;
+        }
+        .confirmar {
+            background-color: rgb(236, 15, 59);
+        }
+        .confirmar:hover {
+            background-color:rgb(226, 74, 104);
+        }
+    }
+}
+
+.menu-button.disabled {
+    opacity: 0;
+    transform: translate(5rem, 0);
+    animation: Slide-out-menu 0.5s;
+}
+.menu-button.active {
+    animation: Slide-in-menu 0.5s;
+}
+
+@keyframes Slide-in-menu {
+    0% {
+        opacity: 0;
+        transform: translate(0,3rem);
+    }
+    20%{
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0,0)
+    }
+}
+
+@keyframes Slide-out-menu {
+    0% {
+        transform: translate(0)
+    }
+    100% {
+        opacity: 0;
+        display: none;
+        transform: translate(0, 3rem)
+    }
+}

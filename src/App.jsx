@@ -1,83 +1,51 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { Atributos, BaseInfo } from './components/index'
+import PersonajeDefault from './personajeDefault'
+import { Atributos, BaseInfo, Habilidades, Inventario, Menu } from './components/barrel.js'
+import "react-toastify/dist/ReactToastify.css"
+import { ToastContainer } from 'react-toastify'
 
 function App() {
-  const [personaje, setPersonaje] = useState(
-    {
-      infoBase: {
-        nombre: "Ganug Malimar",
-        linaje: "Gnomo",
-        clase: "Barbaro 1",
-        nivel: "1",
-        retratoSrc: "#",
-        maxHp: 15,
-        ac: 13,
-        velocidad: 30,
-        iniciativa: 3,
-      },
-      atributos: {
-        STR: {
-          nombre: "Fuerza",
-          valor: 10,
-          modificador: 0
-        },
-        DEX: {
-          nombre: "Destreza",
-          valor: 10,
-          modificador: 0
-        },
-        CON: {
-          nombre: "Constitución",
-          valor: 10,
-          modificador: 0
-        },
-        INT: {
-          nombre: "Inteligencia",
-          valor: 10,
-          modificador: 0
-        },
-        WIS: {
-          nombre: "Sabiduría",
-          valor: 10,
-          modificador: 0
-        },
-        CHA: {
-          nombre: "Carisma",
-          valor: 10,
-          modificador: 0
-        },
-      },
-      habilidades: {
-        acrobacias: {
-          atributo: "Destreza",
-          modificador: 0,
-          competencia: 0,
-        },
-        arcana: {
-          atributo: "Inteligencia",
-          modificador: 0,
-          competencia: 0,
-        },
-        acrobacias: {
-          atributo: "Destreza",
-          modificador: 0,
-          competencia: 0,
-        },
-      }
+
+  const [personaje, setPersonaje] = useState(PersonajeDefault)
+  useEffect(() => {
+    if (localStorage.getItem('personaje') != undefined && localStorage.getItem('personaje') != "") {
+      setPersonaje(JSON.parse(localStorage.getItem("personaje")))
     }
-  )
+    }, []);
+
+  // LocalStorage
+  useEffect(() => {
+    if (personaje != PersonajeDefault){
+      localStorage.setItem("personaje", JSON.stringify(personaje))
+    }
+  }, [personaje]);
 
   return (
     <>
     <header>
-      <BaseInfo personaje={personaje.infoBase}/>
+    <ToastContainer
+        position="bottom-right"
+        autoClose={3000}
+        limit={3}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+      <BaseInfo personaje={personaje.infoBase} setPersonaje={setPersonaje}/>
     </header>
-    <section>
-      <Atributos atributos={personaje.atributos}/>
+    <section className='principal'>
+      <Atributos atributos={personaje.atributos} setPersonaje={setPersonaje}/>
+      <Habilidades personaje={personaje} setPersonaje={setPersonaje}/>
+      <Inventario personaje={personaje} />
+
     </section>
+    <Menu setPersonaje={setPersonaje}/>
     </>
   )
 }

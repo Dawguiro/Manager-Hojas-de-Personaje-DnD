@@ -1,24 +1,25 @@
 .HitPoints {
     border: 1px solid var(--higlight-color);
     padding: 0.2rem;
-    margin: 5px;
+    margin: 15px 20px 0 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(1fr, 3);
     .input{
         grid-column: 1;
-        width: 100%;
-        margin: 0;
-        padding: 1px;
+        width: 80px;
+        margin: 2px;
         border: 1px solid var(--higlight-color);
         button {
             width: 100%;
-            height: 25px;
+            height: 40px;
             border: none;
         }
         input {
-            width: 55px;
-            height: 30px;
+            text-align: center;
+            font-size: 18px;
+            width: 100%;
+            height: 40px;
             padding: 0 3px;
         }
     }

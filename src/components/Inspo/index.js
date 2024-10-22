@@ -1,0 +1,1 @@
+export { default as Inspo } from "./Inspo/Inspo"

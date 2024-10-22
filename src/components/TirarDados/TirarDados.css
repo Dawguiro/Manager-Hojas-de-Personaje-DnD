@@ -1,0 +1,33 @@
+.roll{
+    margin: 0;
+    padding: 0;
+}
+
+.popup {
+    .nombre-roll {
+        font-size: 1.2rem;
+        font-weight: 100;
+        letter-spacing: -0.05rem;
+        padding-right: 0.5rem;
+        margin: auto;
+    }
+    p {
+        min-width: fit-content;
+        margin: auto;
+        padding: 10px 0 0 0;
+    }
+    .Crit {
+    box-shadow: 0 0 5px rgb(82, 250, 102);
+    padding: 5px;
+    border-radius: 50%;
+    color: rgb(82, 250, 102);
+    font-weight: 600;
+    }
+    .CritFail {
+    box-shadow: 0 0 5px rgb(250, 99, 82);
+    padding: 0.25em 0.5em;
+    border-radius: 50%;
+    color: rgb(250, 99, 82);
+    font-weight: 600;
+    }
+}

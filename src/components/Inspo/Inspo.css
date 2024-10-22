@@ -1,0 +1,35 @@
+span {
+    margin: 0;
+    padding: 0;
+}
+.inspo {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 5px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #393939;
+    cursor: pointer;
+    transition: border-color 0.25s;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+    }
+    .inspo:hover {
+    border-color: var(--higlight-color);
+    }
+    .inspo:focus,
+    .inspo:focus-visible {
+    outline: 5px auto -webkit-focus-ring-color;
+    }
+
+.inspo.active {
+    background-color: rgb(242, 232, 255);
+    color: #1a1a1a;
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.282);
+}
