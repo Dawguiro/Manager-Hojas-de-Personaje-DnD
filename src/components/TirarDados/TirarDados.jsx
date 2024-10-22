@@ -38,7 +38,7 @@ const TirarDados = (props) => {
 }
 
 const random = (dado) => {
-  return (Math.floor(Math.random() * (dado )) + 1)
+  return (Math.floor(Math.random() * (dado)) + 1)
 }
 
 const Toast = ({resultado, dado, modificador, nombre}) => {

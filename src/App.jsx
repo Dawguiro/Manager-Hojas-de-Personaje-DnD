@@ -42,8 +42,6 @@ function App() {
     <section className='principal'>
       <Atributos atributos={personaje.atributos} setPersonaje={setPersonaje}/>
       <Habilidades personaje={personaje} setPersonaje={setPersonaje}/>
-      <Inventario personaje={personaje} />
-
     </section>
     <Menu setPersonaje={setPersonaje}/>
     </>

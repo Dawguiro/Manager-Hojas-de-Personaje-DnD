@@ -63,7 +63,7 @@ const BaseInfo = ({personaje, setPersonaje}) => {
                 </div>
                 Velocidad
               </div>
-              <TirarDados modificador={infoBase.iniciativa} nombre={'Iniciativa'}>
+              <TirarDados modificador={Number(infoBase.iniciativa)} nombre={'Iniciativa'}>
               <div className='container'>
                 <div className='valor'>
                   {masOMenos(infoBase.iniciativa)}

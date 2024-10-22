@@ -19,6 +19,10 @@ const FormEditar = ({handleClose, show, infoBase, HandleChange, Guardar}) => {
             <Input className={"col"} label="Clase" input={{name: "clase", id: "clase", value: infoBase.clase, onChange: HandleChange, placeholder: "Bárbaro 1"}}/>
           </div>
           <div className="row">
+            <Input className={"col"} label="Nivel" input={{name: "nivel", id: "nivel", value: infoBase.nivel, onChange: HandleChange, placeholder: "1"}}/>
+          </div>
+
+          <div className="row">
             <Input className={"col"} label="Vida Máxima" input={{name: "maxHp", id: "maxHp", value: infoBase.maxHp, onChange: HandleChange, type: "number", placeholder: "15"}}/>
           </div>
           <div className="row">
