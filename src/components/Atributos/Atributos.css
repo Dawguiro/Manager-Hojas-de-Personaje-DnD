@@ -2,6 +2,7 @@
     position: relative;
     height: fit-content;
     text-align: center;
+    z-index: 0;
     margin-top: 30px;
     padding: 50px;
     display: grid;
@@ -25,6 +26,7 @@
         margin: 10px auto;
         .valor {
             position: relative;
+            z-index: 0;
             border: 1px solid var(--higlight-color);
             height: 60px;
             font-weight: 10;
@@ -41,6 +43,7 @@
         }
         .modificador {
             position: absolute;
+            z-index: 0;
             display: flex;
             align-items: center;
             justify-content: center;

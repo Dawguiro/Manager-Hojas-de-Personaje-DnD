@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-    <header>
+    <header style={{position: 'sticky', top: '0px', zIndex: 99}}>
     <ToastContainer
         position="bottom-right"
         autoClose={3000}

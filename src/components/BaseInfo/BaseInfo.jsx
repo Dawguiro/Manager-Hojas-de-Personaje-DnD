@@ -39,40 +39,47 @@ const BaseInfo = ({personaje, setPersonaje}) => {
   return (
     <>
     <div className='BaseInfo'>
+      <div>
+        
+      </div>
       <span onClick={handleShow}>
         <PencilFill/>
       </span>
-          <div className="info-wrap">
-            <div className="info">
-              <div className='datos'>
-                <h1 className='nombre'>{infoBase.nombre}</h1>
-                <p>{infoBase.linaje} {infoBase.clase}</p>
-                <strong>Nivel {infoBase.nivel}</strong>
-              </div>
-            </div>
-            <div className="basic-combat">
-              <div className='container'>
-                <div className='valor'>
-                  {infoBase.ac}
-                </div>
-                AC
-              </div>
-              <div className='container'>
-                <div className='valor'>
-                  {infoBase.velocidad} ft.
-                </div>
-                Velocidad
-              </div>
-              <TirarDados modificador={Number(infoBase.iniciativa)} nombre={'Iniciativa'}>
-              <div className='container'>
-                <div className='valor'>
-                  {masOMenos(infoBase.iniciativa)}
-                </div>
-                Iniciativa
-              </div>
-              </TirarDados>
-            </div>
+      <div className="info-wrap">
+
+        <div className="datos d-flex">
+          <div className="col">
+            <h1 className='nombre'>{infoBase.nombre}</h1>
           </div>
+          <div className="col">
+            <p>{infoBase.linaje} {infoBase.clase}</p>
+            <strong>Nivel {infoBase.nivel}</strong>
+          </div>
+        </div>
+
+        <div className="basic-combat">
+          <div className='container'>
+            <div className='valor'>
+              {infoBase.ac}
+            </div>
+            AC
+          </div>
+          <div className='container'>
+            <div className='valor'>
+              {infoBase.velocidad} ft.
+            </div>
+            Velocidad
+          </div>
+          <TirarDados modificador={Number(infoBase.iniciativa)} nombre={'Iniciativa'}>
+          <div className='container'>
+            <div className='valor'>
+              {masOMenos(infoBase.iniciativa)}
+            </div>
+            Iniciativa
+          </div>
+          </TirarDados>
+        </div>
+      </div>
       <div className='hp-inspo'>
         <Inspo texto={'Inspiración'}/>
         <HitPoints maxHp={infoBase.maxHp} setInfo={setInfo}/>

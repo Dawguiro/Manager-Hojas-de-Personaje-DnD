@@ -1,39 +1,39 @@
 .BaseInfo {
-    position: sticky;
-    z-index: 1;
-    background-color: #000000b5;
+    position: relative;
+    background-color: #11060f;
     border-bottom: 1px solid var(--higlight-color);
-    width: 100vw;
     margin: 0 auto;
-    padding-block: 0.5em;
+    padding-block: 0.8em;
     grid-template-columns: repeat(1fr, 6);
     grid-template-rows: 1fr 1fr;
-    top: 0px;
-    left: 0px;
     font-family: var(--bs-body-font-family);
     letter-spacing: 0.05rem;
     color: rgba(240, 255, 255, 0.856);
-    .info {
-        margin: 0 0 15px 0;
-        padding: 0;
-        .datos{
-            padding: 0;
+    .bi {
+        position: absolute;
+        left: 20px;
+    }
+    .datos{
+        width: 100%;
+        padding: 0.5rem 0.5rem;
+        margin: 20px 5px;
+        margin-bottom: 1rem;
+        font-size: 1.2em;
+        line-height: 1;
+        .nombre {
+            padding: 0 0;
             margin: 0;
-            width: 100%;
-            font-size: 1.2em;
-            line-height: 1.2;
-            .nombre {
-                padding: 0em;
-                margin: 0;
-                font-size: 1.3rem;
-                font-weight: 500;
-                letter-spacing: -0.03rem;
-            }
-            p {
-                margin: 3%;
-            }
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03rem;
+        }
+        p {
+            padding: 0.2rem 0;
+            margin: 0;
+            vertical-align: center;
         }
     }
+    
     .hp-inspo {
         display: flex;
         align-items: center;
@@ -88,6 +88,9 @@
             margin: 10px;
             height: 4rem;
         }
-    } 
+        .info-wrap {
+            width: 50%;
+        }
+    }
 
 }
