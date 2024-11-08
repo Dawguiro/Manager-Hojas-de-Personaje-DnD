@@ -1,0 +1,9 @@
+.SelectPersonaje {
+    display: flex;
+    background-color: #11060f;
+    select {
+        padding: 0.3rem 1rem;
+        margin: 5px 10px;
+        align-self: start;
+    }
+}

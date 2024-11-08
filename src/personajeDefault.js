@@ -1,6 +1,6 @@
 const PersonajeDefault = {
    "infoBase": {
-      "nombre": "Nombre de Personaje",
+      "nombre": "Personaje Vacio",
       "linaje": "Raza",
       "clase": "Clase 1",
       "nivel": "1",

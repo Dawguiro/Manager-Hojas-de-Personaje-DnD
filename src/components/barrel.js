@@ -8,3 +8,4 @@ export { default as Habilidades } from "./Habilidades/Habilidades.jsx";
 export { default as Menu } from "./Menu/Menu.jsx";
 export { default as FormEditar } from "./FormEditar/FormEditar.jsx";
 export { default as Inventario } from "./Inventario/Inventario.jsx";
+export { default as SelectPersonaje } from "./SelectPersonaje/SelectPersonaje";

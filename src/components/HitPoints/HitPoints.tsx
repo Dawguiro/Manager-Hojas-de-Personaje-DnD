@@ -15,7 +15,7 @@ const HitPoints = ({maxHp, minHp = 0}: Props) => {
     setInput(Number(e.target.value))
     }
 
-  const setVidaNueva = (maxHp: number, minHp: number, vidaNueva: number, setHp: Function) => {
+  const setVidaNueva = (maxHp: number, minHp: number, vidaNueva: number) => {
     if (vidaNueva <= minHp){
       setHp(minHp)
     } else if (vidaNueva >= maxHp){
@@ -30,13 +30,13 @@ const HitPoints = ({maxHp, minHp = 0}: Props) => {
 
     if (btn.id == "cura"){
       let vidaNueva = hp + input
-      setVidaNueva(maxHp, minHp, vidaNueva, setHp)
+      setVidaNueva(maxHp, minHp, vidaNueva)
       setInput(0)
     }
 
     if (btn.id == "daño"){
-      let vidaNueva = hp + input
-      setVidaNueva(maxHp, minHp, vidaNueva, setHp)
+      let vidaNueva = hp - input
+      setVidaNueva(maxHp, minHp, vidaNueva)
       setInput(0)
     }
   }

@@ -1,25 +1,49 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 import PersonajeDefault from './personajeDefault'
-import { Atributos, BaseInfo, Habilidades, Inventario, Menu } from './components/barrel.js'
+import { Atributos, BaseInfo, Habilidades, Inventario, Menu, SelectPersonaje } from './components/barrel.js'
 import "react-toastify/dist/ReactToastify.css"
 import { ToastContainer } from 'react-toastify'
 
 function App() {
+  const LISTA_DEFAULT = [PersonajeDefault, PersonajeDefault, PersonajeDefault]
 
+  const didMount = useRef(false);
   const [personaje, setPersonaje] = useState(PersonajeDefault)
-  useEffect(() => {
-    if (localStorage.getItem('personaje') != undefined && localStorage.getItem('personaje') != "") {
-      setPersonaje(JSON.parse(localStorage.getItem("personaje")))
-    }
-    }, []);
+  const [pjIndex, setIndex] = useState(0)
 
+  const debug = () => {
+    console.log("Indice Personaje: ", pjIndex)
+    console.log("Personaje: ", personaje.infoBase.nombre)
+  }
+  useEffect(debug, [pjIndex])
+  
   // LocalStorage
   useEffect(() => {
-    if (personaje != PersonajeDefault){
-      localStorage.setItem("personaje", JSON.stringify(personaje))
+    if (localStorage.getItem('personajes') != undefined && localStorage.getItem('personajes') != "") {
+      let lista = JSON.parse(localStorage.getItem("personajes"))
+      setPersonaje(lista[pjIndex])
+    }
+    }, [pjIndex]);
+
+  useEffect(() => {
+    if (didMount.current){
+      if (personaje[pjIndex] != PersonajeDefault){
+        if (JSON.parse(localStorage.getItem("personajes"))) {
+          let lista = JSON.parse(localStorage.getItem("personajes"))
+          lista[pjIndex] = personaje
+          localStorage.setItem("personajes", JSON.stringify(lista))
+        }
+        else {
+          localStorage.setItem("personajes", JSON.stringify(LISTA_DEFAULT))
+        }
+      }
+    } else {
+      didMount.current = "true"
     }
   }, [personaje]);
+
+  
 
   return (
     <>
@@ -37,7 +61,8 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-      <BaseInfo personaje={personaje.infoBase} setPersonaje={setPersonaje}/>
+    <SelectPersonaje personaje={personaje.infoBase.nombre} pjIndex={pjIndex} setIndex={setIndex}/>
+    <BaseInfo personaje={personaje.infoBase} setPersonaje={setPersonaje}/>
     </header>
     <section className='principal'>
       <Atributos atributos={personaje.atributos} setPersonaje={setPersonaje}/>
