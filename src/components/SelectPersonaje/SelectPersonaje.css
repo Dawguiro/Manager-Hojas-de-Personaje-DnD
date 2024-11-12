@@ -1,9 +1,38 @@
 .SelectPersonaje {
     display: flex;
     background-color: #11060f;
-    select {
-        padding: 0.3rem 1rem;
-        margin: 5px 10px;
-        align-self: start;
+    button {
+        padding: 0.2rem;
+        margin: 0.5rem 0 0 0.5rem;
+        background-color: inherit;
+        border: none;
     }
+    .bi {
+        color: #654fc6;
+        font-size: 3rem;
+        padding: 0.1rem;
+    }
+}
+
+.offcanvas {
+    background-color: #0b0b0bb3 !important;
+    color: rgba(242, 232, 255, 0.908) !important;
+    .offcanvas-body{
+        padding: 1rem 0;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+    li {
+        margin: 0.4rem 0;
+        padding: 0.8rem 1rem;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+    }
+    li.selected {
+        color: white;
+        font-weight: 700;
+    }
+
 }
