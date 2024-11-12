@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./BaseInfo.css"
-import { HitPoints, FormEditar, Inspo, TirarDados } from '../barrel'
+import { HitPoints, FormEditar, Inspo, TirarDados, SelectPersonaje } from '../barrel'
 import 'bootstrap/dist/css/bootstrap.css'; 
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import { PencilFill } from 'react-bootstrap-icons'
@@ -9,7 +9,7 @@ import {masOMenos} from '../modificador.ts';
 
 
 
-const BaseInfo = ({personaje, setPersonaje}) => {
+const BaseInfo = ({personaje, setPersonaje, pjIndex, setIndex}) => {
   const [infoBase, setInfo] = useState(personaje)
   useEffect(() => {
     setInfo(personaje)
@@ -42,9 +42,12 @@ const BaseInfo = ({personaje, setPersonaje}) => {
       <div>
         
       </div>
-      <span onClick={handleShow}>
-        <PencilFill/>
-      </span>
+      <div className="actions">  
+        <SelectPersonaje personaje={personaje.nombre} pjIndex={pjIndex} setIndex={setIndex}/>
+        <span onClick={handleShow}>
+          <PencilFill/>
+        </span>
+      </div>
       <div className="info-wrap">
 
         <div className="datos d-flex">

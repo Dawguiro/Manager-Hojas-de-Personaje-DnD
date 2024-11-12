@@ -61,8 +61,7 @@ function App() {
         pauseOnHover
         theme="dark"
       />
-    <SelectPersonaje personaje={personaje.infoBase.nombre} pjIndex={pjIndex} setIndex={setIndex}/>
-    <BaseInfo personaje={personaje.infoBase} setPersonaje={setPersonaje}/>
+    <BaseInfo personaje={personaje.infoBase} setPersonaje={setPersonaje} pjIndex={pjIndex} setIndex={setIndex}/>
     </header>
     <section className='principal'>
       <Atributos atributos={personaje.atributos} setPersonaje={setPersonaje}/>

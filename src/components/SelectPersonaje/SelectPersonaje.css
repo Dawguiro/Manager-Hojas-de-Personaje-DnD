@@ -1,16 +1,12 @@
 .SelectPersonaje {
-    display: flex;
     background-color: #11060f;
     button {
-        padding: 0.2rem;
-        margin: 0.5rem 0 0 0.5rem;
         background-color: inherit;
         border: none;
     }
     .bi {
         color: #654fc6;
-        font-size: 3rem;
-        padding: 0.1rem;
+        font-size: 2.8rem;
     }
 }
 
